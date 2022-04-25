@@ -1,0 +1,383 @@
+*, *:before, *:after {
+    -moz-box-sizing    : border-box; /* Firefox */
+    -webkit-box-sizing : border-box; /* Safari */
+    box-sizing         : border-box;
+    *behavior          : url(./js/boxsizing.htc); /* ie7 et ie8 */
+}
+
+/* Couleurs de la charte */ 
+:root {
+    --blue: #0065FC;
+    --light-blue: #DEEBFF;
+    --grey: #F2F2F2;
+    --big-font: 30px;
+    --margin-page: 0 5%;
+}
+
+.blue {
+    color: #0065FC;
+}
+
+.light-blue {
+    color: #DEEBFF
+}
+
+.grey {
+    color: #F2F2F2; 
+}
+/*xxxx Couleurs de la charte xxxx*/
+
+/* structure globale */
+body  {    
+    max-width: 1440px;
+    max-height: 1884;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px; 
+}
+
+header, main, footer.container {
+    margin: 0 5%;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+/*xxxx structure globale xxxx*/
+
+/* oooo header oooo */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 100px;
+}
+
+header img {
+    width: 10%;
+}
+
+header ul {
+    width: 300px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header a {
+    width: 150px;
+    height: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+header a:hover {
+    color: var(--blue);
+    border-top: 2px solid var(--blue);
+}
+/* xxxx header xxxx */
+
+/* oooo main oooo */
+
+/*o title o*/
+main .title {
+    padding: 0; 
+    display: flex;  
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+main .title h1 {
+    margin: 0;
+    font-size: 22px;    
+}
+
+main .title p {
+    margin: 5px 0; 
+}
+/*x title x*/
+
+/*o formulaire o*/
+main form {
+    margin: 30px 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+}
+
+main form i.fa-map-marker-alt {
+    width: 51px;
+    height: 50px;
+    padding: 16px;
+    background-color: var(--grey);
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border: 1px solid var(--grey);
+}
+
+input.p-holder {
+    width: 240px;
+    height: 50px;
+    padding-left: 10px;
+    border-left: 1px solid var(--grey);
+    border-right: 1px solid transparent;
+    border-top: 1px solid var(--grey);
+    border-bottom: 1px solid var(--grey);
+}
+
+input.search {
+    color: #FFF;
+    padding: 15px 20px;
+    background-color: var(--blue);
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border: 1px solid var(--blue);
+    font-weight: bolder;
+}
+  
+  
+input::placeholder {
+    color: #000;
+    font-weight: bolder;
+}
+  
+.fa-search {
+    opacity: 0;
+}
+/*x formulaire x*/
+
+/*o filters o*/
+main div.filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;    
+}
+
+main div.filters div {
+    display: flex;
+    gap: 10px;
+}
+
+.filters span {
+    font-weight: bold;
+    text-align: center;
+    margin: 0 10px;    
+}
+
+.fa-money-bill-wave, 
+.fa-child, 
+.fa-heart, 
+.fa-dog { 
+    width: 50px; 
+    height: 50px;
+    padding-top: 14px;
+    background: white;
+    border: 1px solid var(--light-blue);
+    border-radius: 50%;
+    color: var(--blue);
+}
+  
+button i.filter {
+  background: var(--light-blue);
+  color: var(--blue);
+  border: 1px solid var(--grey);
+  margin: 0;
+}
+
+div.filters button  { 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #FFF;    
+    border-radius: 50px 50px 50px 50px;
+    border: 2px solid var(--light-blue);
+    padding: 0;       
+}
+/*x filters x*/
+
+/*o information o*/
+.fa-info {
+    display: flex;
+    align-items: center;
+    padding-right: 12px;
+    padding-left: 12px;
+    width: 30px; 
+    height: 30px;
+    border: 1px solid var(--light-blue);
+    border-radius: 50%;
+    color: var(--blue);
+}
+  
+  main div.information {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+  
+  main div.information p {
+    padding-left: 10px;
+}
+/*o information o*/
+
+/* xxxx main xxxx */
+
+/* oooo footer oooo */
+/* xxxx footer xxxx */
+
+/* Responsive layout */
+@media screen and (max-width: 768px) {
+
+    /* oooo header oooo */
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        line-height: 50px;
+    }
+    
+    header img {
+        width: 24%;
+        margin-top: 25px;
+    }
+    
+    header ul {
+        width: 300px;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    header a {
+        width: 150px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid var(--grey);
+    }
+
+    header a:hover {
+        color: var(--blue);
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid var(--blue);
+    }
+    /* xxxx header xxxx */
+
+    /* oooo main oooo */
+
+    /*o title o*/
+    main .title {
+        margin-top: 30px;
+        padding: 0; 
+        display: flex;  
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    /*x title x*/
+
+    /*o formulaire o*/
+    main form {
+        margin: 30px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    input.search {
+        color: #FFF;
+        padding: 15px 20px;
+        background-color: var(--blue);
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        border: 1px solid var(--blue);
+        font-weight: bolder;
+    }
+
+    input[value="Rechercher"] { 
+        display:none; 
+    }
+        
+    .fa-search {
+        opacity: 1;
+        width: 50px;
+        height: 50px;
+        padding: 16px;
+        background-color: var(--blue);
+        color: #FFF;
+        border-bottom-right-radius: 12px;
+        border-top-right-radius: 12px;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+    }
+    /*x formulaire x*/
+
+    /*o filters o*/
+    main div.filters {
+        display: flex;
+        flex-direction: column;        
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    main div.filters div {
+        display: flex;
+        gap: 20px;
+    }
+
+    .filters span {
+        font-weight: bold;
+        text-align: center;
+        margin: 0 10px;    
+    }
+
+    .fa-money-bill-wave, 
+    .fa-child, 
+    .fa-heart, 
+    .fa-dog { 
+        width: 50px; 
+        height: 50px;
+        padding-top: 14px;
+        background: white;
+        border: 1px solid var(--light-blue);
+        border-radius: 50%;
+        color: var(--blue);
+    }
+    
+    button i.filter {
+    background: var(--light-blue);
+    color: var(--blue);
+    border: 1px solid var(--grey);
+    margin: 0;
+    }
+
+    div.filters button  { 
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        background: #FFF;    
+        border-radius: 50px 50px 50px 50px;
+        border: 2px solid var(--light-blue);
+        padding: 0;       
+    }
+    /*x filters x*/
+
+    /*o information o*/
+    /*o information o*/
+
+    /* xxxx main xxxx */
+  
+    /* oooo footer oooo */
+    /* xxxx footer xxxx */
+}

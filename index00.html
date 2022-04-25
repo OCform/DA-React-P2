@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author"   content="Abdi MIGAUD">
+        <meta name="description" content="Un outil de planification de vacances ! Le site de l'agence Booki permet aux usagers de trouver des hébergements et des activités dans la ville de leur choix.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      	<link rel="shortcut icon" type="image/png" href="images/logo/Booki.png"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css.map"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>   
+        <link rel="stylesheet" href="./css/style.css"/>
+        <title>Booki</title>
+    </head>
+    <body>
+        <div class="flex-container">
+
+            <header>
+                <div class="flex-box">
+
+                    <div class="flex-content">                
+                        <img src="./images/logo/Booki@3x.png" alt="logo">
+                    </div>
+
+                    <div class="flex-content">
+                        <nav>
+                            <ul>
+                                <a href="#"><li>Hébergements</li></a>
+                                <a href="#"><li>Activités</li></a>                        
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+            </header>
+
+            <main>
+                <section id="content">
+                    <!-- title -->
+                    <section id="title">
+                        <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
+                        <p>En plein centre ville ou en pleine nature</p>
+                    </section>
+                    <!-- formulaire -->
+                    <form class="form-search" action="#">                        
+                            <i class="fa fa-map-marker-alt"></i>
+                            <input class="p-holder" type="search" placeholder="Marseille, France" name="search">
+                                                        
+                            <input class="search" type="submit" value="Rechercher">
+                            <i class="fa fa-search"></i> 
+                                                                 
+                    </form>
+                    <!-- filters -->
+                    <section id="filters">
+                        <div>Filtres</div>
+                        <!-- Add font awesome icons Filters-->
+                        <button><div class="filter fa fa-money-bill-wave"></div><span>Économique</span></button>
+                        <button><div class="filter fa fa-child"></div><span>Familial</span></button>
+                        <button><div class="filter fa fa-heart"></div><span>Romantique</span></button>
+                        <button><div class="filter fa fa-dog"></div><span>Animaux autorisés</span></button>
+                    </section>
+                    <!-- information -->
+                    <div id="information">
+                        <a href="#" class="fas fa-info"></a><span><p>Plus de 500 logements sont disponibles dans cette ville</p></span>
+                    </div>
+                    <section id="wrapper">
+                        <section id="hebergements">
+                            <h2>Hébergements à Marseille</h2>
+                        </section>
+                        <aside id="populaires">
+                            <h2>Les plus populaires</h2>
+                        </aside>
+                    </section>
+                    <section id="activites">
+                        <h2>Activités à Marseille</h2>
+                    </section>
+                </section>
+            </main>
+            
+            <footer>            
+                <nav id="footer-navigation">
+                    <section>                        
+                        <ul>
+                            <span>A propos</span>
+                            <a href="#"><li>Fonctionnement du site</li></a>
+                            <a href="#"><li>Conditions générales de vente</li></a>
+                            <a href="#"><li>Données et confidentialité</li></a>
+                        </ul>
+                    </section>
+
+                    <section>                        
+                        <ul>
+                            <span>Nos hébergements</span>
+                            <li><a href="#">Charte qualité</li></a>
+                            <li><a href="#">Soumettre votre hôtel</li></a>
+                        </ul>
+                    </section>
+
+                    <section>                        
+                        <ul>
+                            <span>Assistance</span>
+                            <li><a href="#">Centre d'aide</li></a>
+                            <li><a href="#">Nous contacter</li></a>
+                        </ul>
+                    </section>
+                </nav>            
+            </footer>   
+
+        </div>
+    </body>
+</html>
