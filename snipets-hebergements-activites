@@ -1,0 +1,407 @@
+       <!--o hebergements flex-container o-->
+        
+                       
+            <div class="hebergements">
+
+                <div class="hebergement"> 
+                    <style>
+                    .hebergement-container {
+                        display: flex;
+                        justify-content: space-between;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        align-items: flex-end;
+                        text-align: center;
+                        background-color: #f1f1f1;
+                        border-radius: 24px 24px;
+                    }
+                    
+                    .hebergement-container > div {
+                        flex: 25%;
+                        background-color: #fff;
+                        margin: 10px;
+                        padding: 50px;
+                        font-size: 30px;
+                        border-radius: 12px 12px;
+                    }
+
+                    .hebergement-title h2 {
+                        display: flex;
+                        justify-content: flex-start;
+                        margin-left: 20px;
+                    }
+
+                   @media screen and (max-width: 768px) {
+                        .hebergement-container {
+                            display: flex;
+                            justify-content: space-between;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            
+                        }
+                        
+                        .hebergement-container > div {
+                            flex: 100%;
+                            background-color: #fff;
+                            margin: 10px;
+                            padding: 50px;
+                            font-size: 30px;
+                            border-radius: 12px 12px;
+                        }
+
+                        .hebergement-title h2 {
+                            display: flex;
+                            justify-content: flex-start;
+                            margin-left: 20px;
+                        }
+                    }
+
+                    </style>
+                    <div class="hebergement-title">
+                        <h2>Hébergements à Marseille</h2>
+                    </div>
+                    <div class="hebergement-container">
+                        <div class="card">
+                            <img src="./images/hebergements/1_xlarge/annie-spratt-Eg1qcIitAuA-unsplash.jpg" alt="Avatar" style="width:100%">
+                            <div class="container">
+                              <h4><b>Jane Doe</b></h4> 
+                              <p>Interior Designer</p> 
+                            </div>
+                          </div>
+
+                        <div class="card">
+                      <img src="./images/hebergements/1_xlarge/annie-spratt-Eg1qcIitAuA-unsplash.jpg" alt="Avatar" style="width:100%">
+                      <div class="container">
+                        <h4><b>Jane Doe</b></h4> 
+                        <p>Interior Designer</p> 
+                      </div>
+                    </div>
+
+                        <div class="card">
+                      <img src="./images/hebergements/1_xlarge/annie-spratt-Eg1qcIitAuA-unsplash.jpg" alt="Avatar" style="width:100%">
+                      <div class="container">
+                        <h4><b>Jane Doe</b></h4> 
+                        <p>Interior Designer</p> 
+                      </div>
+                    </div>
+
+                        <div class="card">
+                      <img src="./images/hebergements/1_xlarge/annie-spratt-Eg1qcIitAuA-unsplash.jpg" alt="Avatar" style="width:100%">
+                      <div class="container">
+                        <h4><b>Jane Doe</b></h4> 
+                        <p>Interior Designer</p> 
+                      </div>
+                    </div>
+
+
+                        <div class="card">
+                      <img src="./images/hebergements/1_xlarge/annie-spratt-Eg1qcIitAuA-unsplash.jpg" alt="Avatar" style="width:100%">
+                      <div class="container">
+                        <h4><b>Jane Doe</b></h4> 
+                        <p>Interior Designer</p> 
+                      </div>
+                    </div>
+
+                        <div class="card">
+                      <img src="./images/hebergements/1_xlarge/annie-spratt-Eg1qcIitAuA-unsplash.jpg" alt="Avatar" style="width:100%">
+                      <div class="container">
+                        <h4><b>Jane Doe</b></h4> 
+                        <p>Interior Designer</p> 
+                      </div>
+                    </div>
+
+                    </div>
+                </div>
+                
+                <div class="populaire">
+                    <style>
+                        .populaire-container {
+                            display: flex;
+                        justify-content: space-between;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        align-items: flex-end;
+                        text-align: center;
+                        background-color: #f1f1f1;
+                        border-radius: 24px 24px;
+                        }
+                        
+                        .populaire-container > div {
+                            flex: 100%;
+                            background-color: #fff;
+                            margin: 10px;
+                            padding: 25px;
+                            font-size: 30px;
+                            border-radius: 12px 12px;
+                        }
+
+                        .populaire-title h2 {
+                            display: flex;
+                            justify-content: center;
+                        }
+                    </style>
+                    
+                    <div class="populaire-title">
+                        <h2>Les plus populaires</h2>
+                    </div>
+                                        
+                    <div class="populaire-container">
+                        
+                        <div class="card">
+                            <img src="./images/hebergements/1_xlarge/annie-spratt-Eg1qcIitAuA-unsplash.jpg" alt="Avatar" style="width:100%">
+                            <div class="container">
+                              <h4><b>Jane Doe</b></h4> 
+                              <p>Interior Designer</p> 
+                            </div>
+                          </div>
+                        
+                          <div class="card">
+                            <img src="./images/hebergements/1_xlarge/annie-spratt-Eg1qcIitAuA-unsplash.jpg" alt="Avatar" style="width:100%">
+                            <div class="container">
+                              <h4><b>Jane Doe</b></h4> 
+                              <p>Interior Designer</p> 
+                            </div>
+                          </div>
+
+                        <div class="card">
+                      <img src="./images/hebergements/1_xlarge/annie-spratt-Eg1qcIitAuA-unsplash.jpg" alt="Avatar" style="width:100%">
+                      <div class="container">
+                        <h4><b>Jane Doe</b></h4> 
+                        <p>Interior Designer</p> 
+                      </div>
+                    </div>
+                      
+                    </div>
+                </div>
+              
+            </div>
+            
+            <!--x hebergements flex-container x-->
+
+            <!-- activites -->
+            <style>
+                               
+                .header {
+                  text-align: center;
+                  padding: 32px;
+                }
+                
+                .row {
+                  display: -ms-flexbox; /* IE10 */
+                  display: flex;
+                  -ms-flex-wrap: wrap; /* IE10 */
+                  flex-wrap: wrap;
+                  padding: 0 4px;
+                }
+                
+                /* Create four equal columns that sits next to each other */
+                .column {
+                  -ms-flex: 25%; /* IE10 */
+                  flex: 25%;
+                  max-width: 25%;
+                  padding: 0 4px;
+                }
+                
+                .column img {
+                  margin-top: 8px;
+                  vertical-align: middle;
+                  width: 100%;
+                }
+                
+                /* Responsive layout - makes a two column-layout instead of four columns */
+                @media screen and (max-width: 800px) {
+                  .column {
+                    -ms-flex: 50%;
+                    flex: 50%;
+                    max-width: 50%;
+                  }
+                }
+                
+                /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+                @media screen and (max-width: 600px) {
+                  .column {
+                    -ms-flex: 100%;
+                    flex: 100%;
+                    max-width: 100%;
+                  }
+                }
+                </style>
+               
+                
+                <!-- Header -->
+                <div class="header">
+                  <h1>Responsive Image Grid</h1>
+                  <p>Resize the browser window to see the responsive effect.</p>
+                </div>
+                
+                <!-- Photo Grid -->
+                <div class="row"> 
+                  <div class="column">
+                    <img src="/w3images/wedding.jpg" style="width:100%">
+                    <img src="/w3images/rocks.jpg" style="width:100%">
+                    <img src="/w3images/falls2.jpg" style="width:100%">
+                    <img src="/w3images/paris.jpg" style="width:100%">
+                    <img src="/w3images/nature.jpg" style="width:100%">
+                    <img src="/w3images/mist.jpg" style="width:100%">
+                    <img src="/w3images/paris.jpg" style="width:100%">
+                  </div>
+                  <div class="column">
+                    <img src="/w3images/underwater.jpg" style="width:100%">
+                    <img src="/w3images/ocean.jpg" style="width:100%">
+                    <img src="/w3images/wedding.jpg" style="width:100%">
+                    <img src="/w3images/mountainskies.jpg" style="width:100%">
+                    <img src="/w3images/rocks.jpg" style="width:100%">
+                    <img src="/w3images/underwater.jpg" style="width:100%">
+                  </div>  
+                  <div class="column">
+                    <img src="/w3images/wedding.jpg" style="width:100%">
+                    <img src="/w3images/rocks.jpg" style="width:100%">
+                    <img src="/w3images/falls2.jpg" style="width:100%">
+                    <img src="/w3images/paris.jpg" style="width:100%">
+                    <img src="/w3images/nature.jpg" style="width:100%">
+                    <img src="/w3images/mist.jpg" style="width:100%">
+                    <img src="/w3images/paris.jpg" style="width:100%">
+                  </div>
+                  <div class="column">
+                    <img src="/w3images/underwater.jpg" style="width:100%">
+                    <img src="/w3images/ocean.jpg" style="width:100%">
+                    <img src="/w3images/wedding.jpg" style="width:100%">
+                    <img src="/w3images/mountainskies.jpg" style="width:100%">
+                    <img src="/w3images/rocks.jpg" style="width:100%">
+                    <img src="/w3images/underwater.jpg" style="width:100%">
+                  </div>
+                </div>
+                <!--xxxxxxx activites xxxxxx-->
+
+                <!--o card o-->
+                <style>
+                    .card {
+                      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                      transition: 0.3s;
+                      width: 100%;
+                      height: 25%;
+                      object-fit: cover;
+                      border-radius: 5px;
+                    }
+                    
+                    .card:hover {
+                      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+                    }
+                    
+                    img {
+                      width: 100%;
+                      height: 12.5%;
+                      object-fit: cover;
+                      border-radius: 5px 5px 0 0;
+                    }
+                    
+                    .container {
+                      padding: 2px 16px;
+                    }
+                    </style>
+                                        
+                    <h2>Round Card</h2>
+                    
+                    <div class="card">
+                      <img src="./images/hebergements/1_xlarge/annie-spratt-Eg1qcIitAuA-unsplash.jpg" alt="Avatar" style="width:100%">
+                      <div class="container">
+                        <h4><b>Jane Doe</b></h4> 
+                        <p>Interior Designer</p> 
+                      </div>
+                    </div>
+                    <!--x card x-->
+
+                    <!--o activites o-->
+                    <style>
+                        
+                        .header {
+                          text-align: center;
+                          padding: 32px;
+                        }
+                        
+                        .row {
+                          display: -ms-flexbox; /* IE10 */
+                          display: flex;
+                          -ms-flex-wrap: wrap; /* IE10 */
+                          flex-wrap: wrap;
+                          padding: 0 4px;
+                        }
+                        
+                        /* Create four equal columns that sits next to each other */
+                        .column-1 {
+                          -ms-flex: 25%; /* IE10 */
+                          flex: 25%;
+                          max-width: 25%;
+                          padding: 0 4px;
+                        }
+                        
+                        .column-1 img {
+                          margin-top: 8px;
+                          vertical-align: middle;
+                          width: 100%;
+                          height: 50%;
+                          object-fit: cover;
+                        }
+                        
+                        .column-2 {
+                          -ms-flex: 25%; /* IE10 */
+                          flex: 25%;
+                          max-width: 25%;
+                          padding: 0 4px;
+                        }
+                        
+                        .column-2 img {
+                          margin-top: 8px;
+                          vertical-align: middle;
+                          width: 50%;
+                          height: 25%;
+                          object-fit: cover;
+                        }
+                        
+                        
+                        /* Responsive layout - makes a two column-layout instead of four columns */
+                        @media screen and (max-width: 800px) {
+                          .column-1, .column-2 {
+                            -ms-flex: 50%;
+                            flex: 50%;
+                            max-width: 50%;
+                          }
+                        }
+                        
+                        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+                        @media screen and (max-width: 600px) {
+                          .column-1, .column-2 {
+                            -ms-flex: 100%;
+                            flex: 100%;
+                            max-width: 100%;
+                          }
+                        }
+                        </style>
+                                               
+                        <!-- Header -->
+                        <div class="header">
+                          <h1>Responsive Image Grid</h1>
+                          <p>Resize the browser window to see the responsive effect.</p>
+                        </div>
+                        
+                        <!-- Photo Grid -->
+                        <div class="row"> 
+                          <div class="column-1">    
+                            <img src="./images/hebergements/1_xlarge/annie-spratt-Eg1qcIitAuA-unsplash.jpg" style="width:100%">    
+                          </div>
+                          <div class="column-2">
+                            <img src="./images/hebergements/1_xlarge/aw-creative-VGs8z60yT2c-unsplash.jpg" style="width:100%">
+                            <img src="./images/hebergements/1_xlarge/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg" style="width:100%">    
+                          </div>  
+                          <div class="column-1">    
+                            <img src="./images/hebergements/1_xlarge/febrian-zakaria-M6S1WvfW68A-unsplash.jpg" style="width:100%">    
+                          </div>
+                          <div class="column-2">
+                              <img src="./images/hebergements/1_xlarge/febrian-zakaria-sjvU0THccQA-unsplash.jpg" style="width:100%">
+                            <img src="./images/hebergements/1_xlarge/fred-kleber-gTbaxaVLvsg-unsplash.jpg" style="width:100%">    
+                          </div>
+                        </div>
+                        <!--x activites x-->
+
+
+    

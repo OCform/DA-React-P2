@@ -30,7 +30,7 @@
 /* structure globale */
 body  {    
     max-width: 1440px;
-    max-height: 1884;
+    max-height: 1884px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -39,7 +39,7 @@ body  {
 }
 
 header, main, footer.container {
-    margin: 0 5%;
+    margin: 0 2%;
 }
 
 ul {
@@ -118,7 +118,7 @@ main form {
 main form i.fa-map-marker-alt {
     width: 51px;
     height: 50px;
-    padding: 16px;
+    padding: 18px;
     background-color: var(--grey);
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
@@ -126,7 +126,7 @@ main form i.fa-map-marker-alt {
 }
 
 input.p-holder {
-    width: 240px;
+    width: 230px;
     height: 50px;
     padding-left: 10px;
     border-left: 1px solid var(--grey);
@@ -160,39 +160,31 @@ input::placeholder {
 main div.filters {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 10px;    
+    align-items:flex-start;
+    gap: 30px;    
 }
 
 main div.filters div {
     display: flex;
-    gap: 10px;
+    gap: 30px;
 }
 
 .filters span {
     font-weight: bold;
     text-align: center;
-    margin: 0 10px;    
+    margin: 0 21px;    
 }
 
 .fa-money-bill-wave, 
 .fa-child, 
 .fa-heart, 
 .fa-dog { 
-    width: 50px; 
-    height: 50px;
-    padding-top: 14px;
+    width: 48px; 
+    height: 48px;
     background: white;
-    border: 1px solid var(--light-blue);
     border-radius: 50%;
     color: var(--blue);
-}
-  
-button i.filter {
-  background: var(--light-blue);
-  color: var(--blue);
-  border: 1px solid var(--grey);
-  margin: 0;
+    padding-top: 18px;
 }
 
 div.filters button  { 
@@ -202,7 +194,14 @@ div.filters button  {
     background: #FFF;    
     border-radius: 50px 50px 50px 50px;
     border: 2px solid var(--light-blue);
-    padding: 0;       
+    padding: 0;
+           
+}
+
+button i.filter {
+  background: var(--light-blue);
+  color: var(--blue);
+  margin: 0;
 }
 /*x filters x*/
 
@@ -210,13 +209,15 @@ div.filters button  {
 .fa-info {
     display: flex;
     align-items: center;
-    padding-right: 12px;
-    padding-left: 12px;
+    padding-right: 16px;
+    padding-left: 10px;
+    padding-bottom: 4px;
     width: 30px; 
     height: 30px;
     border: 1px solid var(--light-blue);
     border-radius: 50%;
     color: var(--blue);
+    font-size: .6cm;
 }
   
   main div.information {
@@ -226,17 +227,42 @@ div.filters button  {
     align-items: center;
 }
   
-  main div.information p {
+main div.information p {
     padding-left: 10px;
 }
 /*o information o*/
+
+/* oooo hebergements oooo */            
+.hebergements {
+    display: flex;        
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    text-align: center;
+}
+
+.hebergement {
+    background-color: var(--grey);
+    width: 67.69%;
+    height: 626px;
+    border-radius: 24px 24px;
+}
+
+.populaire {
+    background-color: var(--grey);
+    width: 32.3%;
+    height: 626px;
+    border-radius: 24px 24px;
+}
+/* xxxx hebergements xxxx */
 
 /* xxxx main xxxx */
 
 /* oooo footer oooo */
 /* xxxx footer xxxx */
 
-/* Responsive layout */
+/* Responsive layout - 768px*/
 @media screen and (max-width: 768px) {
 
     /* oooo header oooo */
@@ -249,7 +275,7 @@ div.filters button  {
     }
     
     header img {
-        width: 24%;
+        width: 40%;
         margin-top: 25px;
     }
     
@@ -313,7 +339,7 @@ div.filters button  {
         opacity: 1;
         width: 50px;
         height: 50px;
-        padding: 16px;
+        padding: 18px 20px 0px 20px;
         background-color: var(--blue);
         color: #FFF;
         border-bottom-right-radius: 12px;
@@ -326,58 +352,83 @@ div.filters button  {
     /*o filters o*/
     main div.filters {
         display: flex;
-        flex-direction: column;        
+        flex-direction: column;
+        flex-wrap: wrap;
         align-items: flex-start;
-        gap: 20px;
-    }
-
-    main div.filters div {
-        display: flex;
-        gap: 20px;
-    }
-
-    .filters span {
-        font-weight: bold;
-        text-align: center;
-        margin: 0 10px;    
-    }
-
-    .fa-money-bill-wave, 
-    .fa-child, 
-    .fa-heart, 
-    .fa-dog { 
-        width: 50px; 
-        height: 50px;
-        padding-top: 14px;
-        background: white;
-        border: 1px solid var(--light-blue);
-        border-radius: 50%;
-        color: var(--blue);
+        gap: 15px;    
     }
     
-    button i.filter {
-    background: var(--light-blue);
-    color: var(--blue);
-    border: 1px solid var(--grey);
-    margin: 0;
-    }
-
-    div.filters button  { 
+    main div.filters div {
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
-        background: #FFF;    
-        border-radius: 50px 50px 50px 50px;
-        border: 2px solid var(--light-blue);
-        padding: 0;       
+        gap: 15px;
     }
     /*x filters x*/
 
     /*o information o*/
     /*o information o*/
 
+    /* oooo hebergements oooo */
+            
+    .hebergements {
+        display: flex;        
+        justify-content: flex-start;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
+        text-align: left;
+    }
+    
+    .hebergement {
+        border: 1px solid var(--blue);
+        background-color: var(--grey);
+        width: 375px;
+        height: 4550px;
+    }
+    
+    .populaire {
+        border: 1px solid var(--blue);
+        background-color: var(--grey);
+        width: 375px;
+        height: 580px;
+    }    
+    
+    .hebergement, .populaire {
+        flex: 100%;
+    }
+    
+    
+    /* xxxx hebergements xxxx */
+    
+
     /* xxxx main xxxx */
   
     /* oooo footer oooo */
     /* xxxx footer xxxx */
+}
+
+/* Responsive layout - 992px*/
+@media screen and (max-width: 992px) {
+
+    /*o main o*/
+
+    /*o filters o*/
+    main div.filters {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 15px;    
+    }
+
+    main div.filters div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    /*x filters x*/
+
+    /*o main o*/
+
 }
