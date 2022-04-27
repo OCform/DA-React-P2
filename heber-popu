@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/></head>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
 <style>
 * {
   box-sizing: border-box;
@@ -29,14 +31,6 @@ body {
   padding: 0 4px;
 }
 
-.column-1-heberge img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
-  height: 25%; 
-  object-fit:cover;
-}
-
 .column-2-populair {
   -ms-flex: 35%; /* IE10 */
   flex: 35%;
@@ -44,13 +38,6 @@ body {
   padding: 0 4px;
 }
 
-.column-2-populair img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
-  height: 25%; 
-  object-fit:cover;  
-}
 
 /************************ooooo Hebergement ooooo******************************/
 .header-hebergement {
@@ -83,11 +70,13 @@ body {
 }
 
 .column-hebergement img {
-  margin-top: 8px;
+  margin: 0px;
+  padding: 4px;
   vertical-align: middle;
   width: 100%;
-  height: 39.4%; 
+  height: 119px; 
   object-fit:cover;
+  border-radius: 15px 15px 0 0;
 }
 /************************xxxxx Hebergement xxxxx******************************/
 /************************ooooo Les plus populaires ooooo******************************/
@@ -120,31 +109,52 @@ body {
 }
 
 .column-populair img {
-  margin-top: 8px;
+  margin: 4px;
+  padding: 4px;
   vertical-align: middle;
   width: 100%;
-  height: 10%; 
+  height: 139px; 
   object-fit:cover;
+  border-radius: 15px 0 0 15px;
 }
 /********************xxxxx Les plus populaires xxxxx*********************************/
 
 /**************************ooooo Round Card ooooo************************************/
-.card {
+.card-hebergement {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 40%;
+  width: 100%;
   border-radius: 5px;
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-direction: column; /* IE10 */
+  flex-direction: column;
+  border-radius: 15px 15px;
 }
 
-.card:hover {
+.card-hebergement:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-img {
-  border-radius: 5px 5px 0 0;
+.container-hebergement {
+  padding: 2px 16px;
 }
 
-.container {
+.card-populair {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 100%;
+  border-radius: 5px;
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  border-radius: 15px 15px;
+}
+
+.card-populair:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container-populair {
   padding: 2px 16px;
 }
 /**************************xxxxx Round Card xxxxx************************************/
@@ -193,6 +203,17 @@ img {
     width: 100%;
     height: 17.5%; 
     object-fit:cover;
+  }
+  
+  .card-populair {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    border-radius: 5px;
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-direction: column; /* IE10 */
+    flex-direction: column;
   }
 }
 
@@ -259,25 +280,14 @@ img {
   	<div class="row-hebergement">    	
 		<!--ooooo Card Grid Hebergement ooooo-->
     	<div class="column-hebergement">
-    		<div class="card"><img src="/w3images/wedding.jpg"><div class="container">
-    <h4><b>Jane Doe</b></h4> 
-    <p>Interior Designer</p> 
-  </div>
-</div>
-            <div class="card"><img src="/w3images/underwater.jpg"><div class="container">
-    <h4><b>Jane Doe</b></h4> 
-    <p>Interior Designer</p> 
-  </div>
-</div>
-        </div>
-        
-        <div class="column-hebergement">
-    		<div class="card"><img src="/w3images/wedding.jpg"><div class="container">
-    <h4><b>Jane Doe</b></h4> 
-    <p>Interior Designer</p> 
-  </div>
-</div>
-            <div class="card"><img src="/w3images/underwater.jpg"><div class="container">
+    		<div class="card-hebergement">
+            	<img src="/w3images/wedding.jpg">
+                <div class="container">
+                    <h3><b>Jane Doe</b></h3> 
+                    <p>Interior Designer</p> 
+                  </div>
+                </div>
+            <div class="card-hebergement"><img src="/w3images/underwater.jpg"><div class="container">
     <h4><b>Jane Doe</b></h4> 
     <p>Interior Designer</p> 
   </div>
@@ -285,12 +295,25 @@ img {
         </div>
         
         <div class="column-hebergement">
-    		<div class="card"><img src="/w3images/wedding.jpg"><div class="container">
+    		<div class="card-hebergement"><img src="/w3images/wedding.jpg"><div class="container">
     <h4><b>Jane Doe</b></h4> 
     <p>Interior Designer</p> 
   </div>
 </div>
-            <div class="card"><img src="/w3images/underwater.jpg"><div class="container">
+            <div class="card-hebergement"><img src="/w3images/underwater.jpg"><div class="container">
+    <h4><b>Jane Doe</b></h4> 
+    <p>Interior Designer</p> 
+  </div>
+</div>
+        </div>
+        
+        <div class="column-hebergement">
+    		<div class="card-hebergement"><img src="/w3images/wedding.jpg"><div class="container">
+    <h4><b>Jane Doe</b></h4> 
+    <p>Interior Designer</p> 
+  </div>
+</div>
+            <div class="card-hebergement"><img src="/w3images/underwater.jpg"><div class="container">
     <h4><b>Jane Doe</b></h4> 
     <p>Interior Designer</p> 
   </div>
@@ -310,17 +333,17 @@ img {
     <div class="row-populair">    	
 		<!--ooooo Card Grid Populaire ooooo-->
     	<div class="column-populair">
-        	<div class="card"><img src="/w3images/underwater.jpg"><div class="container">
+        	<div class="card-populair"><img src="/w3images/underwater.jpg"><div class="container">
     <h4><b>Jane Doe</b></h4> 
     <p>Interior Designer</p> 
   </div>
 </div>
-    		<div class="card"><img src="/w3images/wedding.jpg"><div class="container">
+    		<div class="card-populair"><img src="/w3images/wedding.jpg"><div class="container">
     <h4><b>Jane Doe</b></h4> 
     <p>Interior Designer</p> 
   </div>
 </div>
-            <div class="card"><img src="/w3images/underwater.jpg"><div class="container">
+            <div class="card-populair"><img src="/w3images/underwater.jpg"><div class="container">
     <h4><b>Jane Doe</b></h4> 
     <p>Interior Designer</p> 
   </div>
