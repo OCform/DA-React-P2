@@ -14,354 +14,982 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>   
     <link rel="stylesheet" href="./css/style.css"/>
     <title>Booki</title>
+    
+    <style>
+        /*oooo Start oooo*/ 
+        /*xxxx End xxxx*/
+        *, *:before, *:after {
+            -moz-box-sizing    : border-box; /* Firefox */
+            -webkit-box-sizing : border-box; /* Safari */
+            box-sizing         : border-box;
+            *behavior          : url(./js/boxsizing.htc); /* ie7 et ie8 */
+        }
+
+        /*oooo Color Chart oooo*/ 
+        :root {
+            --blue: #0065FC;
+            --light-blue: #DEEBFF;
+            --grey: #F2F2F2;
+            --big-font: 30px;
+            --margin-page: 0 5%;
+        }
+
+        .bold {
+            font-weight: 900;
+        }
+
+        .blue {
+            color: #0065FC;
+        }
+
+        .light-blue {
+            color: #DEEBFF
+        }
+
+        .grey {
+            color: #F2F2F2; 
+        }
+        /*xxxx Color Chart xxxx*/
+
+        /*oooo Overall oooo*/ 
+        
+        body {
+            margin: 0;
+            font: 16px 'Raleway', sans-serif;
+            max-height: 1880px;   
+            display: flex; 
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            border: 0px solid transparent;
+            background-color: transparent;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        ul {
+            list-style: none;
+        }
+        /*xxxx Overall xxxx*/
+
+        /*oooo Header oooo*/ 
+        .container {
+            width: 1340px;
+            height: 1880px;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+        }
+
+        header img {
+            width: 130px;
+            height: 65px;
+        }
+
+        .header {
+            height: 100px;
+            display: flex;  
+            justify-content: space-between;   
+            align-items: center; 
+        }
+
+        header ul {
+            padding: 0;
+            display: flex;
+            align-items: center;            
+        }
+
+        header li {            
+            width: 150px;            
+            display: flex;
+            justify-content: center;
+        }
+
+        header li a {
+            display: flex;
+            justify-content: center;
+            align-items: center;            
+            width: 150px;
+            height: 100px;
+            border-top: 2px solid transparent;
+        }
+
+        header li a:hover {
+            color: var(--blue);
+            border-top: 2px solid var(--blue);
+        }
+        /*xxxx Header xxxx*/
+
+        /*oooo Start main oooo*/         
+        .main {
+            height: 1530px;
+        }
+
+        /* Title */
+        main .title {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        main h1 {
+            font-size: 22px;
+            margin: 0px;
+        }
+
+        main p {
+            font-size: px;
+            margin-top: 5px;
+        }
+
+        /*o formulaire o*/
+        main form {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        main form i.fa-map-marker-alt {
+            width: 45px;
+            height: 45px;
+            padding-top: 15px;
+            padding-left: 16px;
+            background-color: var(--grey);
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            border: 1px solid var(--grey);
+        }
+
+        input.p-holder {
+            width: 200px;
+            height: 45px;
+            padding-left: 10px;
+            border-left: 1px solid var(--grey);
+            border-right: 1px solid transparent;
+            border-top: 1px solid var(--grey);
+            border-bottom: 1px solid var(--grey);
+        }
+
+        input.search {
+            height: 45px;
+            color: #FFF;
+            padding: 0 20px;
+            background-color: var(--blue);
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+            border: 1px solid var(--blue);    
+            font-weight: bolder;
+        }
+        
+        
+        input::placeholder {
+            color: #000;
+            font-weight: bolder;
+        }
+        
+        .fa-search {
+            opacity: 0;
+        }
+        /*x formulaire x*/
+
+        /*o filters o*/
+        main div.filters {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;   
+            margin: 20px 0; 
+        }
+
+        main div.filters div {
+            display: flex;
+            gap: 30px;
+        }
+
+        .filters p {
+            margin: 0;
+            font-weight: bold;    
+        }
+
+        .filters span {
+            font-weight: bold;    
+            margin: 0 12px;    
+        }
+
+        .fa-money-bill-wave, 
+        .fa-child, 
+        .fa-heart, 
+        .fa-dog { 
+            width: 36px; 
+            height: 36px;
+            background: white;
+            border-radius: 50%;
+            color: var(--blue);
+            padding: 10px 0;
+            padding-right: 2px;
+        }
+
+        div.filters button  { 
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            height: 40px;
+            background: #FFF;    
+            border-radius: 50px 50px 50px 50px;
+            border: 2px solid var(--grey);
+            padding: 0;
+                
+        }
+
+        button i.filter {
+        background: var(--light-blue);
+        color: var(--blue);
+        margin: 0;
+        }
+        /*x filters x*/
+
+        /*o information o*/
+        .fa-info {
+            padding-top: 1px;
+            padding-left: 7px;
+            width: 22px; 
+            height: 22px;
+            border: 1px solid var(--light-blue);
+            border-radius: 50%;
+            color: var(--blue);
+        }
+        
+        main div.information {
+            display: flex;
+            justify-content: first baseline;
+            flex-wrap: wrap;
+            align-items:baseline;
+        }
+        
+        main div.information p {
+            margin-left: 5px;
+            margin-bottom: 30px;
+        }
+        /*o information o*/
+        
+        /*o Card Hébergements o*/
+        #hebergements .card {
+            background-color: #FFF;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;            
+        }
+
+        #hebergements .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        #hebergements img {
+            border: 5px solid white;
+            border-radius: 25px 25px 0 0;  
+            width: 100%;
+            height: 62%;
+            object-fit: cover;
+        }
+
+        #hebergements .container {
+            width: auto;
+            height: auto;
+            margin-left: 10px;           
+            font-size: .9em;
+        }
+
+        #hebergements .container h3, 
+        #hebergements .container p, 
+        #hebergements .container div.note {
+            margin: 0;
+            padding: 0;
+        }
+
+        #hebergements .container p {
+            margin: 3px 0;
+        }
+        /*x Card Hébergements x*/
+
+        /*o Card Les Plus Populaires o*/
+        #populaires .card {
+            display: flex;
+            background-color: #FFF;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;            
+        }
+
+        #populaires .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        #populaires picture {            
+            border-radius: 25px 0 0 25px;  
+            width: 170px;
+            height: 139px;
+            object-fit: cover;
+        }
+
+        #populaires img {
+            border: 5px solid white;
+            border-radius: 25px 0 0 25px;
+            width: 170px;
+            height: 160px;            
+            object-fit: cover;
+        }
+
+        #populaires .container {
+            width: auto;
+            height: auto;
+            margin: 10px;
+            font-size: .9em;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #populaires .container h3, 
+        #populaires .container p, 
+        #populaires .container div.note {
+            margin: 0;
+            padding: 0;            
+        }
+        /*x Card Les Plus Populaires x*/
+
+        /*o Card Activites o*/
+        #activites .card {
+            display: flex;
+            flex-direction: column;
+            background-color: #FFF;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;            
+        }
+
+        #activites .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        #activites picture {            
+            border-radius: 25px 25px 0 0;  
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #activites img {
+            border-radius: 25px 25px 0 0;
+            width: 100%;
+            height: 100%;            
+            object-fit: cover;
+        }
+
+        #activites .container {
+            width: auto;
+            height: 40px;
+            margin: 10px;
+            font-size: .9em;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #activites .container h3, 
+        #activites .container p, 
+        #activites .container div.note {
+            margin: 0;
+            padding: 0;            
+        }
+        /*x Card Activites x*/
+
+        /*ooo Hébergements & Les Plus Populaires ooo*/
+        main .flex-container {
+            width: 100%;
+            height: 626px;
+            display: flex;
+            gap: 50px;
+        }
+
+        /*ooo Hébergements ooo*/
+        #hebergements {
+            background-color: var(--grey);
+            border-radius: 25px;
+            flex: 4;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: space-around;
+        }
+
+        #hebergements .title {
+            margin-left: 30px;
+        }
+
+        #hebergements .flex-card {
+            display: flex;            
+        }
+
+        #hebergements .column {
+            flex: 3;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column; 
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        #hebergements .box {
+            border-radius: 25px;          
+            width: 250px;
+            height: 200px;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #hebergements .affiche {
+            font-size: 1.5em;
+            font-weight: 900;
+            margin: 30px;
+        }
+        /*xxx Hébergements xxx*/
+
+        /*ooo Les Plus Populaires ooo*/
+        #populaires {
+            background-color: var(--grey);
+            border-radius: 25px;
+            flex: 2;
+        }
+
+        #populaires .title {
+            margin: 0 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #populaires .flex-card {
+            display: flex;            
+        }
+
+        #populaires .column {
+            flex: 3;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column; 
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        #populaires .box {
+            border-radius: 25px;   
+            width: 400px;
+            height: 160px;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /*xxx Les Plus Populaires xxx*/
+        
+        /*ooo Activites ooo*/
+         #activites {         
+            margin-top: 20px ;   
+            border-radius: 25px;
+            flex: 4;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: space-around;
+        }
+
+        #activites .title {
+            margin-left: 10px;
+            margin-top: 50px;
+        }
+
+        #activites .title h2 {
+            
+        }
+
+        #activites .flex-card {
+            display: flex;            
+        }
+
+        #activites .column {
+            flex: 3;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column; 
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        #activites .box {
+            border-radius: 25px;          
+            width: 95%;
+            height: 100%;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /*xxx Activites xxx*/
+        
+        /*xxx Hébergements & Les Plus Populaires xxx*/
+
+        /*xxxx End main  xxxx*/
+
+        /*oooo Start footer oooo*/ 
+        footer {
+            width: 100%;
+            height: 200px;
+            background-color: var(--grey);
+            display: flex;
+            justify-content: center;
+            margin-left: auto;       
+            margin-right: auto;
+        }
+
+        .footer {
+            width: 1340px;
+            height: 200px;
+            margin-top: 20px;       
+            margin-bottom: auto;   
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: space-between;
+            
+            align-items:flex-start;
+        }
+
+        .footer ul {            
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;  
+            row-gap: 20px;          
+        }
+        /*xxxx End footer xxxx*/
+    </style>
+
 </head>
-<body>    
-    <header>
-        <img src="./images/logo/Booki@3x.png" alt="logo du site Booki">
-        <nav>
-            <ul>
-                <a href="#hebergements"><li>Hébergements</li></a>
-                <a href="#"><li>Activités</li></a>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <!--o title o-->
-        <div class="title">
-            <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
-            <span><p>En plein centre ville ou en pleine nature</p></span>
-        </div>
-        <!--x title x-->
-        <!--o formulaire o-->        
-        <form class="form-search" action="#">                        
-            <i class="fa fa-map-marker-alt"></i>
-            <input class="p-holder" type="search" placeholder="Marseille, France" name="search">                                        
-            <input class="search" type="submit" value="Rechercher"><i class="fa fa-search"></i>
-        </form>
-        <!--x formulaire x-->
-        <!--o filters o-->
-        <div class="filters">
-            <span>Filtres</span>
-            <!-- Add font awesome icons Filters-->
-            <div>
-                <button><i class="filter fa fa-money-bill-wave"></i><span>Économique</span></button>
-                <button><i class="filter fa fa-child"></i><span>Familial</span></button>
-            </div>            
-            <button><i class="filter fa fa-heart"></i><span>Romantique</span></button>
-            <button><i class="filter fa fa-dog"></i><span>Animaux autorisés</span></button>
-        </div>
-        <!--x filters x-->
-        <!--o information o-->
-        <div class="information">
-            <a href="#" class="fas fa-info"></a><span><p>Plus de 500 logements sont disponibles dans cette ville</p></span>
-        </div>
-        <!--x information x-->
-        <!--ooooo Hebergement & populaire ooooo-->         
-          <!--ooooo Grid Hebergement Populaire ooooo-->
-          <div class="row-heberge-populair"> 
-            <div class="column-1-heberge">
-                <!--ooooo Header Hebergement ooooo-->
-              <div class="header-hebergement">
-                <h2>Hébergements à Marseille</h2>
-              </div>
-              <!--xxxxx Header Hebergement xxxxx-->
-                <!--ooooo Grid Hebergement ooooo-->
-                <div class="row-hebergement">    	
-                  <!--ooooo Card Grid Hebergement ooooo-->
-                  <div class="column-hebergement">
-                    <a href="#">
-                      <div class="card-hebergement">
-                        <picture>
-                          <source media="(min-width:1024px)" srcset="./images/hebergements/1_xlarge/marcus-loke-WQJvWU_HZFo-unsplash.jpg"> 
-                          <source media="(min-width:768px) " srcset="./images/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
-                          <source media="(min-width:568px)" srcset="./images/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">                                   
-                          <img src="./images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Photo de l'auberge La Cannebière" style="width: 100%;">
-                        </picture>
-                        <div class="container-hebergement">                          
-                          <h3>Auberge La Cannebière</h3>
-                          <p>Nuit à partir de <span class="bold">25€</span></p>
-                          <div class="note" aria-label="Note : 4 sur 5" role="img">
-                              <i class="blue fas fa-star"></i>
-                              <i class="blue fas fa-star"></i>
-                              <i class="blue fas fa-star"></i>
-                              <i class="blue fas fa-star"></i>
-                              <i class="grey fas fa-star"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-
-                    <a href="#">
-                      <article class="card-hebergement">                          
-                        <picture>
-                            <source media="(min-width:1024px)" srcset="./images/hebergements/1_xlarge/fred-kleber-gTbaxaVLvsg-unsplash.jpg"> 
-                            <source media="(min-width:768px) " srcset="./images/hebergements/2_large/fred-kleber-gTbaxaVLvsg-unsplash.jpg">
-                            <source media="(min-width:568px)" srcset="./images/hebergements/3_medium/fred-kleber-gTbaxaVLvsg-unsplash.jpg">                                    
-                            <img src="./images/hebergements/4_small/fred-kleber-gTbaxaVLvsg-unsplash.jpg" alt="Photo de l'Hôtel du Port" style="width: 100%;">
-                        </picture>
-                        <div class="container-hebergement">                          
-                          <h3>Hôtel du port</h3>
-                          <p>Nuit à partir de 52<span class="bold">€</span></p>
-                          <div class="note" aria-label="Note : 5 sur 5" role="img">
-                              <i class="blue fas fa-star"></i>
-                              <i class="blue fas fa-star"></i>
-                              <i class="blue fas fa-star"></i>
-                              <i class="blue fas fa-star"></i>
-                              <i class="blue fas fa-star"></i>
-                          </div>
-                        </div>
-                      </article>
-                    </a>
-                  </div>
-
-                  <div class="column-hebergement">
-                    
-                    <a href="#">
-                      <article class="card-hebergement">
-                          <picture>
-                              <source media="(min-width:1024px)" srcset="./images/hebergements/1_xlarge/reisetopia-B8WIgxA_PFU-unsplash.jpg"> 
-                              <source media="(min-width:768px) " srcset="./images/hebergements/2_large/reisetopia-B8WIgxA_PFU-unsplash.jpg">
-                              <source media="(min-width:568px)" srcset="./images/hebergements/3_medium/reisetopia-B8WIgxA_PFU-unsplash.jpg">                                    
-                              <img src="./images/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg" alt="Photo de l'Hôtel des mouettes" style="width: 100%;">
-                          </picture>
-                          <div class="container-hebergement">
-                            <h3>Hôtel Les mouettes</h3>
-                            <p>Nuit à partir de 76<span class="bold">€</span></p>
-                            <div class="note" aria-label="Note : 4 sur 5" role="img">
-                                <i class="blue fas fa-star"></i>
-                                <i class="blue fas fa-star"></i>
-                                <i class="blue fas fa-star"></i>
-                                <i class="blue fas fa-star"></i>
-                                <i class="grey fas fa-star"></i>
-                            </div>
-                          </div>
-                      </article>
-                    </a>
-                      
-                    <a href="#">
-                      <article class="card-hebergement">
-                          <picture>
-                              <source media="(min-width:1024px)" srcset="./images/hebergements/1_xlarge/annie-spratt-Eg1qcIitAuA-unsplash.jpg"> 
-                              <source media="(min-width:768px) " srcset="./images/hebergements/2_large/annie-spratt-Eg1qcIitAuA-unsplash.jpg">
-                              <source media="(min-width:568px)" srcset="./images/hebergements/3_medium/annie-spratt-Eg1qcIitAuA-unsplash.jpg">                                    
-                              <img src="./images/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg" alt="Photo de l'Hôtel de la mer" style="width: 100%;">
-                          </picture>
-                          <div class="container-hebergement">
-                            <h3>Hôtel de la mer</h3>
-                            <p>Nuit à partir de 46<span class="bold">€</span></p>
-                            <div class="note" aria-label="Note : 3 sur 5" role="img">
-                                <i class="blue fas fa-star"></i>
-                                <i class="blue fas fa-star"></i>
-                                <i class="blue fas fa-star"></i>
-                                <i class="grey fas fa-star"></i>
-                                <i class="grey fas fa-star"></i>
-                            </div>
-                          </div>
-                      </article>
-                    </a>
-                  </div>
-                  
-                  <div class="column-hebergement">
-                    
-                    <a href="#">
-                      <article class="card-hebergement">
-                        <picture>
-                            <source media="(min-width:1024px)" srcset="./images/hebergements/1_xlarge/nicate-lee-kT-ZyaiwBe0-unsplash.jpg"> 
-                            <source media="(min-width:768px) " srcset="./images/hebergements/2_large/nicate-lee-kT-ZyaiwBe0-unsplash.jpg">
-                            <source media="(min-width:568px)" srcset="./images/hebergements/3_medium/nicate-lee-kT-ZyaiwBe0-unsplash.jpg">                                    
-                            <img src="./images/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg" alt="Photo de l'Auberge Le Panier" style="width: 100%;">
-                        </picture>
-                        <div class="container-hebergement">
-                          <h3>Auberge Le Panier</h3>
-                          <p>Nuit à partir de <span class="bold">23€</span></p>
-                          <div class="note" aria-label="Note : 4 sur 5" role="img">
-                              <i class="blue fas fa-star"></i>
-                              <i class="blue fas fa-star"></i>
-                              <i class="blue fas fa-star"></i>
-                              <i class="blue fas fa-star"></i>
-                              <i class="grey fas fa-star"></i>
-                          </div>
-                        </div>
-                      </article>
-                  </a>
-
-                  <a href="#">
-                      <article class="card-hebergement">                          
-                        <picture>
-                            <source media="(min-width:1024px)" srcset="./images/hebergements/1_xlarge/febrian-zakaria-M6S1WvfW68A-unsplash.jpg"> 
-                            <source media="(min-width:768px) " srcset="./images/hebergements/2_large/febrian-zakaria-M6S1WvfW68A-unsplash.jpg">
-                            <source media="(min-width:568px)" srcset="./images/hebergements/3_medium/febrian-zakaria-M6S1WvfW68A-unsplash.jpg">                                    
-                            <img src="./images/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg" alt="Photo de l'Hôtel chez Amina" style="width: 100%;">
-                        </picture>
-                        <div class="container-hebergement">
-                          <h3>Hôtel chez Amina</h3>
-                          <p>Nuit à partir de 96<span class="bold">€</span></p>
-                          <div class="note" aria-label="Note : 4 sur 5" role="img">
-                              <i class="blue fas fa-star"></i>
-                              <i class="blue fas fa-star"></i>
-                              <i class="blue fas fa-star"></i>
-                              <i class="blue fas fa-star"></i>
-                              <i class="grey fas fa-star"></i>
-                          </div>
-                        </div>
-                      </article>
-                  </a>
-
-                  </div>
-                  <!--xxxxx Card Grid Hebergement xxxxx-->        
-              </div>
-              <!--xxxxx Header Hebergement xxxxx-->
+<body>
+    <div class="container">
+        <header>
+            <div class="header">
+                <img src="./images/logo/Booki@3x.png" alt="logo">            
+                <nav>
+                    <ul>
+                        <li><a href="#hebergements">Hébergements</a></li>
+                        <li><a href="#activites">Activités</a></li>
+                    </ul>
+                </nav>
             </div>
-            <div class="column-2-populair">
-              <!--ooooo Header Populaire ooooo-->
-              <div class="header-populair">
-                <h2>Les plus populaires</h2><i class="fas fa-chart-line"></i>
-              </div>
-              <!--xxxxx Header Populaire xxxxx-->
-              <!-- Grid Les Plus Populaire --> 
-              <div class="row-populair">    	
-                  <!--ooooo Card Grid Populaire ooooo-->
-                  <div class="column-populair">
-
-                    <a href="#">
-                      <article class="card-populair">
-                        <picture>
-                          <source media="(min-width:1024px)" srcset="./images/hebergements/1_xlarge/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg"> 
-                          <source media="(min-width:768px) " srcset="./images/hebergements/2_large/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg">
-                          <source media="(min-width:568px)" srcset="./images/hebergements/3_medium/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg">                                    
-                          <img src="./images/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg" alt="Photo de l'Hôtel Le soleil du matin">
-                      </picture>
-                      <div class="container-populair">
-                          <h3>Hôtel Le soleil du matin</h3>
-                          <p>Nuit à partir de 128<span class="bold">€</span></p>
-                          <div class="note" aria-label="Note : 4 sur 5" role="img">                        
-                            <i class="bleu fas fa-star"></i>
-                            <i class="bleu fas fa-star"></i>
-                            <i class="bleu fas fa-star"></i>
-                            <i class="bleu fas fa-star"></i>
-                            <i class="grey fas fa-star"></i>
-                          </div>
-                      </div>
-                      </article>
-                    </a>
-
-                    <a href="#">
-                      <article class="card-populair">                         
-                        <picture>
-                            <source media="(min-width:1024px)" srcset="./images/hebergements/1_xlarge/aw-creative-VGs8z60yT2c-unsplash.jpg"> 
-                            <source media="(min-width:768px) " srcset="./images/hebergements/2_large/aw-creative-VGs8z60yT2c-unsplash.jpg">
-                            <source media="(min-width:568px)" srcset="./images/hebergements/3_medium/aw-creative-VGs8z60yT2c-unsplash.jpg">                                    
-                            <img src="./images/hebergements/4_small/aw-creative-VGs8z60yT2c-unsplash.jpg" alt="Photo d'une chambre des chambres d'hôtes Au coeur de l'eau">
-                        </picture>
-                        <div class="container-populair">
-                          <h3>Au cœur de l'eau <br>Chambres d'hôtes</h3>
-                          <p>Nuit à partir de 71<span class="bold">€</span></p>
-                          <div class="note" aria-label="Note : 4 sur 5" role="img">                          
-                            <i class="bleu fas fa-star"></i>
-                            <i class="bleu fas fa-star"></i>
-                            <i class="bleu fas fa-star"></i>
-                            <i class="bleu fas fa-star"></i>
-                            <i class="grey fas fa-star"></i>
-                          </div>
+        </header>
+        <main>
+            <div class="main">
+                <!-- Title -->
+                <div class="title">
+                    <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
+                    <p>En plein centre ville ou en pleine nature</p>
+                </div>
+                 <!--o formulaire o-->        
+                <form class="form-search" action="#">                        
+                    <i class="fa fa-map-marker-alt"></i>
+                    <input class="p-holder" type="search" placeholder="Marseille, France" name="search">                                        
+                    <input class="search" type="submit" value="Rechercher"><i class="fa fa-search"></i>
+                </form>
+                <!--x formulaire x-->
+                <!--o filters o-->
+                <div class="filters">
+                    <p>Filtres</p>
+                    <!-- Add font awesome icons Filters-->
+                    <div>
+                        <button><i class="filter fa fa-money-bill-wave"></i><span>Économique</span></button>
+                        <button><i class="filter fa fa-child"></i><span>Familial</span></button>
+                    </div>            
+                    <button><i class="filter fa fa-heart"></i><span>Romantique</span></button>
+                    <button><i class="filter fa fa-dog"></i><span>Animaux autorisés</span></button>
+                </div>
+                <!--x filters x-->
+                <!--o information o-->
+                <div class="information">
+                    <a href="#" class="fas fa-info"></a><span><p>Plus de 500 logements sont disponibles dans cette ville</p></span>
+                </div>
+                <!--x information x-->
+                <!--ooo Hébergements & Les Plus Populaires ooo-->
+                <div class="flex-container">
+                    <div id="hebergements">
+                        <div class="title">
+                            <h2>Hébergements à Marseille</h2>
                         </div>
-                      </article>
-                    </a>
-
-                    <a href="#">
-                      <article class="card-populair">                          
-                        <picture>
-                            <source media="(min-width:1024px)" srcset="./images/hebergements/1_xlarge/febrian-zakaria-sjvU0THccQA-unsplash.jpg"> 
-                            <source media="(min-width:768px) " srcset="./images/hebergements/2_large/febrian-zakaria-sjvU0THccQA-unsplash.jpg">
-                            <source media="(min-width:568px)" srcset="./images/hebergements/3_medium/febrian-zakaria-sjvU0THccQA-unsplash.jpg">                                    
-                            <img src="./images/hebergements/4_small/febrian-zakaria-sjvU0THccQA-unsplash.jpg" alt="Photo d'une chambre de l'Hôtel Tout bleu et Blanc">
-                        </picture>
-                        <div class="container-populair">
-                          <h3>Hôtel Tout bleu et Blanc</h3>
-                          <p>Nuit à partir de 68<span class="bold">€</span></p>
-                          <div class="note" aria-label="Note : 4 sur 5" role="img">                          
-                            <i class="bleu fas fa-star"></i>
-                            <i class="bleu fas fa-star"></i>
-                            <i class="bleu fas fa-star"></i>
-                            <i class="bleu fas fa-star"></i>
-                            <i class="grey fas fa-star"></i>
-                          </div>
+                        <div class="flex-card">
+                            <div class="column">
+                                <div class="box">
+                                    <article class="card">
+                                        <picture>
+                                            <source media="(min-width:1440px)" srcset="./images/hebergements/1_xlarge/marcus-loke-WQJvWU_HZFo-unsplash.jpg"> 
+                                            <source media="(min-width:1024px) " srcset="./images/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                                            <source media="(min-width:768px)" srcset="./images/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">                                   
+                                            <img src="./images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Photo de l'Auberge La Cannebière">
+                                        </picture>    
+                                      <div class="container">
+                                        <h3>Auberge La Cannebière</h3>
+                                        <p>Nuit à partir de <b><span class="bold">25€</span></b></p>
+                                        <div class="note" aria-label="Note : 4 sur 5" role="img">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star grey"></i>
+                                        </div> 
+                                      </div>
+                                    </article>
+                                </div>
+                                <div class="box">
+                                    <article class="card">
+                                        <picture>
+                                            <source media="(min-width:1440px)" srcset="./images/hebergements/1_xlarge/marcus-loke-WQJvWU_HZFo-unsplash.jpg"> 
+                                            <source media="(min-width:1024px) " srcset="./images/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                                            <source media="(min-width:768px)" srcset="./images/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">                                   
+                                            <img src="./images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Photo de l'Auberge La Cannebière">
+                                        </picture>    
+                                      <div class="container">
+                                        <h3>Auberge La Cannebière</h3>
+                                        <p>Nuit à partir de <b><span class="bold">25€</span></b></p>
+                                        <div class="note" aria-label="Note : 4 sur 5" role="img">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star grey"></i>
+                                        </div> 
+                                      </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="box">
+                                    <article class="card">
+                                        <picture>
+                                            <source media="(min-width:1440px)" srcset="./images/hebergements/1_xlarge/marcus-loke-WQJvWU_HZFo-unsplash.jpg"> 
+                                            <source media="(min-width:1024px) " srcset="./images/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                                            <source media="(min-width:768px)" srcset="./images/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">                                   
+                                            <img src="./images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Photo de l'Auberge La Cannebière">
+                                        </picture>    
+                                      <div class="container">
+                                        <h3>Auberge La Cannebière</h3>
+                                        <p>Nuit à partir de <b><span class="bold">25€</span></b></p>
+                                        <div class="note" aria-label="Note : 4 sur 5" role="img">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star grey"></i>
+                                        </div> 
+                                      </div>
+                                    </article>
+                                </div>
+                                <div class="box">
+                                    <article class="card">
+                                        <picture>
+                                            <source media="(min-width:1440px)" srcset="./images/hebergements/1_xlarge/marcus-loke-WQJvWU_HZFo-unsplash.jpg"> 
+                                            <source media="(min-width:1024px) " srcset="./images/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                                            <source media="(min-width:768px)" srcset="./images/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">                                   
+                                            <img src="./images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Photo de l'Auberge La Cannebière">
+                                        </picture>    
+                                      <div class="container">
+                                        <h3>Auberge La Cannebière</h3>
+                                        <p>Nuit à partir de <b><span class="bold">25€</span></b></p>
+                                        <div class="note" aria-label="Note : 4 sur 5" role="img">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star grey"></i>
+                                        </div> 
+                                      </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="box">
+                                    <article class="card">
+                                        <picture>
+                                            <source media="(min-width:1440px)" srcset="./images/hebergements/1_xlarge/marcus-loke-WQJvWU_HZFo-unsplash.jpg"> 
+                                            <source media="(min-width:1024px) " srcset="./images/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                                            <source media="(min-width:768px)" srcset="./images/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">                                   
+                                            <img src="./images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Photo de l'Auberge La Cannebière">
+                                        </picture>    
+                                      <div class="container">
+                                        <h3>Auberge La Cannebière</h3>
+                                        <p>Nuit à partir de <b><span class="bold">25€</span></b></p>
+                                        <div class="note" aria-label="Note : 4 sur 5" role="img">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star grey"></i>
+                                        </div> 
+                                      </div>
+                                    </article>
+                                </div>
+                                <div class="box">
+                                    <article class="card">
+                                        <picture>
+                                            <source media="(min-width:1440px)" srcset="./images/hebergements/1_xlarge/marcus-loke-WQJvWU_HZFo-unsplash.jpg"> 
+                                            <source media="(min-width:1024px) " srcset="./images/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                                            <source media="(min-width:768px)" srcset="./images/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">                                   
+                                            <img src="./images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Photo de l'Auberge La Cannebière">
+                                        </picture>    
+                                      <div class="container">
+                                        <h3>Auberge La Cannebière</h3>
+                                        <p>Nuit à partir de <b><span class="bold">25€</span></b></p>
+                                        <div class="note" aria-label="Note : 4 sur 5" role="img">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star grey"></i>
+                                        </div> 
+                                      </div>
+                                    </article>
+                                </div>
+                            </div>
                         </div>
-                      </article>
-                    </a>
-                  </div>
-                  <!--xxxxx Card Grid Hebergement xxxxx-->        
-              </div>
-              <!--xxxxx Grid Les Plus Populaire xxxxx-->
-            </div>  
-          </div>
-          <!--xxxxx Grid Hebergement Populaire xxxxx-->
-    <!--xxxxx Hebergement & populaire xxxxx-->
+                        <div class="affiche"><a href="#">Afficher plus</a></div>
+                    </div>
+                    <div id="populaires">
+                        <div class="title">
+                            <h2>Les plus populaires</h2><i class="fas fa-chart-line"></i>      
+                        </div>
+                        <div class="flex-card">
+                            <div class="column">
+                                <div class="box">
+                                    <article class="card">
+                                        <picture>
+                                            <source media="(min-width:1440px)" srcset="./images/hebergements/1_xlarge/marcus-loke-WQJvWU_HZFo-unsplash.jpg"> 
+                                            <source media="(min-width:1024px) " srcset="./images/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                                            <source media="(min-width:768px)" srcset="./images/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">                                   
+                                            <img src="./images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Photo de l'Auberge La Cannebière">
+                                        </picture>    
+                                      <div class="container">
+                                        <div>
+                                            <h3>Auberge La Cannebière</h3>
+                                            <p>Nuit à partir de <b><span class="bold">25€</span></b></p>
+                                        </div>
+                                        <div class="note" aria-label="Note : 4 sur 5" role="img">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star grey"></i>
+                                        </div> 
+                                      </div>
+                                    </article>
+                                </div>
+                                <div class="box">
+                                    <article class="card">
+                                        <picture>
+                                            <source media="(min-width:1440px)" srcset="./images/hebergements/1_xlarge/marcus-loke-WQJvWU_HZFo-unsplash.jpg"> 
+                                            <source media="(min-width:1024px) " srcset="./images/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                                            <source media="(min-width:768px)" srcset="./images/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">                                   
+                                            <img src="./images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Photo de l'Auberge La Cannebière">
+                                        </picture>    
+                                      <div class="container">
+                                        <div>
+                                            <h3>Auberge La Cannebière</h3>
+                                            <p>Nuit à partir de <b><span class="bold">25€</span></b></p>
+                                        </div>
+                                        <div class="note" aria-label="Note : 4 sur 5" role="img">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star grey"></i>
+                                        </div> 
+                                      </div>
+                                    </article>
+                                </div>
+                                <div class="box">
+                                    <article class="card">
+                                        <picture>
+                                            <source media="(min-width:1440px)" srcset="./images/hebergements/1_xlarge/marcus-loke-WQJvWU_HZFo-unsplash.jpg"> 
+                                            <source media="(min-width:1024px) " srcset="./images/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                                            <source media="(min-width:768px)" srcset="./images/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">                                   
+                                            <img src="./images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Photo de l'Auberge La Cannebière">
+                                        </picture>    
+                                      <div class="container">
+                                        <div>
+                                            <h3>Auberge La Cannebière</h3>
+                                            <p>Nuit à partir de <b><span class="bold">25€</span></b></p>
+                                        </div>
+                                        <div class="note" aria-label="Note : 4 sur 5" role="img">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star grey"></i>
+                                        </div> 
+                                      </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--xxx Hébergements & Les Plus Populaires xxx-->
 
-    <!--oooo Activite ooooo-->
-    <!-- Header Activite -->
-    <section id="activite">
+                <!--ooo Activités à Marseille ooo-->
+                <div class="flex-container">
+                    <div id="activites">
+                        <div class="title">
+                            <h2>Activités à Marseille</h2>
+                        </div>
+                        <div class="flex-card">
+                            <div class="column">
+                                <div class="box">
+                                    <article class="card">
+                                        <picture>
+                                            <source media="(min-width:1440px)" srcset="./images/hebergements/1_xlarge/marcus-loke-WQJvWU_HZFo-unsplash.jpg"> 
+                                            <source media="(min-width:1024px) " srcset="./images/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                                            <source media="(min-width:768px)" srcset="./images/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">                                   
+                                            <img src="./images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Photo de l'Auberge La Cannebière">
+                                        </picture>    
+                                        <div class="container">
+                                            <h3>Auberge La Cannebière</h3> 
+                                        </div>
+                                    </article>
+                                </div>                               
+                                
+                            </div>
+                            
+                            <div class="column">
+                                <div class="box">
+                                    <article class="card">
+                                        <picture>
+                                            <source media="(min-width:1440px)" srcset="./images/hebergements/1_xlarge/marcus-loke-WQJvWU_HZFo-unsplash.jpg"> 
+                                            <source media="(min-width:1024px) " srcset="./images/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                                            <source media="(min-width:768px)" srcset="./images/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">                                   
+                                            <img src="./images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Photo de l'Auberge La Cannebière">
+                                        </picture>    
+                                        <div class="container">
+                                            <h3>Auberge La Cannebière</h3>
+                                         
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="box">
+                                    <article class="card">
+                                        <picture>
+                                            <source media="(min-width:1440px)" srcset="./images/hebergements/1_xlarge/marcus-loke-WQJvWU_HZFo-unsplash.jpg"> 
+                                            <source media="(min-width:1024px) " srcset="./images/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                                            <source media="(min-width:768px)" srcset="./images/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">                                   
+                                            <img src="./images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Photo de l'Auberge La Cannebière">
+                                        </picture>    
+                                        <div class="container">
+                                        <h3>Auberge La Cannebière</h3>
+                                         
+                                        </div>
+                                    </article>
+                                </div>
+                            </div> 
+                            <div class="column">
+                                <div class="box">
+                                    <article class="card">
+                                        <picture>
+                                            <source media="(min-width:1440px)" srcset="./images/hebergements/1_xlarge/marcus-loke-WQJvWU_HZFo-unsplash.jpg"> 
+                                            <source media="(min-width:1024px) " srcset="./images/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                                            <source media="(min-width:768px)" srcset="./images/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">                                   
+                                            <img src="./images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Photo de l'Auberge La Cannebière">
+                                        </picture>    
+                                        <div class="container">
+                                        <h3>Auberge La Cannebière</h3>
+                                         
+                                        </div>
+                                    </article>
+                                </div>                               
+                                
+                            </div>
+                            
+                            <div class="column">
+                                <div class="box">
+                                    <article class="card">
+                                        <picture>
+                                            <source media="(min-width:1440px)" srcset="./images/hebergements/1_xlarge/marcus-loke-WQJvWU_HZFo-unsplash.jpg"> 
+                                            <source media="(min-width:1024px) " srcset="./images/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                                            <source media="(min-width:768px)" srcset="./images/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">                                   
+                                            <img src="./images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Photo de l'Auberge La Cannebière">
+                                        </picture>    
+                                        <div class="container">
+                                        <h3>Auberge La Cannebière</h3>
+                                         
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="box">
+                                    <article class="card">
+                                        <picture>
+                                            <source media="(min-width:1440px)" srcset="./images/hebergements/1_xlarge/marcus-loke-WQJvWU_HZFo-unsplash.jpg"> 
+                                            <source media="(min-width:1024px) " srcset="./images/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                                            <source media="(min-width:768px)" srcset="./images/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">                                   
+                                            <img src="./images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Photo de l'Auberge La Cannebière">
+                                        </picture>    
+                                        <div class="container">
+                                        <h3>Auberge La Cannebière</h3>
+                                         
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--xxx Activités à Marseille xxx-->
+            </div>
+        </main>        
+    </div>
 
-      <div class="header-activite">
-        <h2 class="title-activite">Activités à Marseille</h2>
-      </div>
-
-      <!-- Photo Grid Activite -->
-      <div class="row-activite"> 
-
-        <div class="column-activite-1">
-          <div class="card-1"><img src="./images/activites/4_small/florian-wehde-xW9e8gdotxI-unsplash.jpg" style="width:100%"></div>
-        </div>
-        
-        <div class="column-activite-2">
-          <div class="card-2"><img src="./images/activites/4_small/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg" style="width:100%"></div>  
-          <div class="card-3"><img src="./images/activites/4_small/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg" style="width:100%"></div>
-        </div>
-        
-        <div class="column-activite-3">    
-          <div class="card-4"><img src="./images/activites/4_small/lena-paulin-wH2-EJoDcV0-unsplash.jpg" style="width:100%"></div>    
-        </div>
-        
-        <div class="column-activite-4">    
-          <div class="card-5"><img src="./images/activites/4_small/paul-hermann-QFTrLdQIRhI-unsplash.jpg" style="width:100%"></div>
-          <div class="card-6"><img src="./images/activites/4_small/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg" style="width:100%"></div>
-        </div>
-        
-      </div>
-    </section>
-
-<!--oooo Activite ooooo-->
- </main>    
-    <!--o:) footer (:o-->
     <footer>
-      <div class="footer-container">           
-        <nav id="footer-navigation">
-            <section>                        
-                <ul>
-                    <h3>A propos</h3>
-                    <li><a href="#">Fonctionnement du site</a></li>
-                    <li><a href="#">Conditions générales de vente</a></li>
-                    <li><a href="#">Données et confidentialité</a></li>
-                </ul>
-            </section>
+        <div class="footer">
+            <nav class="footer-nav">
+                <section>
+                    <ul>
+                        <li><b>A propos</b></li>
+                        <li><a href="#">Fonctionnement du site</a>
+                        <li><a href="#">Conditions générales de vente</a></li>
+                        <li><a href="#">Données et confidentialité</a></li>   
+                    </ul>                 
+                </section>
+                <section>
+                    <ul>
+                        <li><b>Nos Hébergements</b></li>
+                        <li><a href="#">Charte qualité</a>
+                        <li><a href="#">Soumettre votre hôtel</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li><b>Assistance</b></li>
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">Nous contacter</a></li>
+                    </ul>
+                </section>
+            </nav>
+        </div>
+    </footer>
 
-            <section>                        
-                <ul>
-                    <h3>Nos hébergements</h3>
-                    <li><a href="#">Charte qualité</a></li>
-                    <li><a href="#">Soumettre votre hôtel</a></li>
-                </ul>
-            </section>
-
-            <section>                        
-                <ul>
-                    <h3>Assistance</h3>
-                    <li><a href="#">Centre d'aide</a></li>
-                    <li><a href="#">Nous contacter</a></li>
-                </ul>
-            </section>
-        </nav>   
-      </div>         
-</footer>
-<!--XXX footer XXX-->
 </body>
 </html>
